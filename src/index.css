@@ -1,0 +1,15 @@
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+  border-radius: 1rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--chakra-colors-orange-50);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--chakra-colors-orange-500);
+  border-radius: 1rem;
+}
