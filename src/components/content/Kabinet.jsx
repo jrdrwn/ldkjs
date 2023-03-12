@@ -16,7 +16,7 @@ function KabinetCard({ title, desc }) {
         </Center>
       </CardHeader>
       <CardBody pt={0}>
-        <Heading fontSize={'2xl'} mb={1} color={'gray.700'} textAlign={'center'} letterSpacing={'wide'}>
+        <Heading fontSize={{ base: 'xl', md: '2xl' }} mb={1} color={'gray.700'} textAlign={'center'} letterSpacing={'wide'}>
           {title}
         </Heading>
         <Text align={'center'} color={'gray.600'} letterSpacing={'wide'}>
@@ -34,7 +34,7 @@ function Kabinet() {
         <Text color={'orange.500'} letterSpacing={'widest'} align={'center'}>
           KABINET
         </Text>
-        <Heading align={'center'} color={'gray.700'} fontSize={{ base: 'xl', sm: '2xl', md: '4xl' }}>
+        <Heading align={'center'} color={'gray.700'} fontSize={{ base: '2xl', md: '4xl' }}>
           Kontribusi Kebaikan
         </Heading>
         <Flex align={'unset'} justify={'center'} pt={6} gap={4} wrap={'wrap'}>

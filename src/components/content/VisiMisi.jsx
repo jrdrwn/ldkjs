@@ -17,7 +17,7 @@ function Visi() {
         </AspectRatio>
         <Flex direction={'column'} gap={8} justify={'space-around'}>
           <Box>
-            <Heading color={'gray.700'} fontSize={{ base: 'xl', sm: '2xl', md: '4xl' }} letterSpacing={'wide'} mb={4}>
+            <Heading color={'gray.700'} fontSize={{ base: '2xl', md: '4xl' }} letterSpacing={'wide'} mb={4}>
               Apa visi dari LDK JS?
             </Heading>
             <Text fontStyle={'italic'} fontSize={{ base: 'lg', md: 'xl' }}>
@@ -52,7 +52,7 @@ function Misi() {
 
   return (
     <>
-      <Heading color={'gray.700'} fontSize={{ base: 'xl', sm: '2xl', md: '4xl' }} letterSpacing={'wide'} mb={4}>
+      <Heading color={'gray.700'} fontSize={{ base: '2xl', md: '4xl' }} letterSpacing={'wide'} mb={4}>
         Misi yang terdapat di LDK JS?
       </Heading>
       <HStack {...events} ref={ref} maxW={'container.lg'} overflowX={'auto'} cursor={'grab'} py={2}>

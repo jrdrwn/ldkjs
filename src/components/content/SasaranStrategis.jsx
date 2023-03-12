@@ -19,7 +19,7 @@ function CardSasaranStrategis({ title, content, imgUrl }) {
       transitionDuration={'0.3s'}
       _hover={{ transform: 'scale(1.02)' }}>
       <CardHeader bgColor={'gray.50'} rounded={'full'} w={'fit-content'} px={4} py={2} m={2} shadow={'md'} border={'2px'} borderColor={'orange.500'}>
-        <Heading fontSize={'xl'} color={'orange.500'} letterSpacing={'wide'} textTransform={'capitalize'}>
+        <Heading fontSize={'lg'} color={'orange.500'} letterSpacing={'wide'} textTransform={'capitalize'}>
           {title}
         </Heading>
       </CardHeader>
@@ -38,7 +38,7 @@ export default function SasaranStrategis() {
       <Text color={'orange.500'} letterSpacing={'widest'} align={'center'}>
         SASARAN STRATEGIS
       </Text>
-      <Heading align={'center'} color={'gray.700'} fontSize={{ base: 'xl', sm: '2xl', md: '4xl' }}>
+      <Heading align={'center'} color={'gray.700'} fontSize={{ base: '2xl', md: '4xl' }}>
         Tujuan yang ingin kami capai
       </Heading>
       <Flex align={'unset'} justify={'center'} pt={6} gap={2} wrap={'wrap'}>
