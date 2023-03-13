@@ -4,6 +4,8 @@ import ProgramUnggulanWave from '../waves/ProgramUnggulanWave'
 function ProgramUnggulanCard({ title, desc, img }) {
   return (
     <Flex
+      border={'2px'}
+      borderColor={'orange.500'}
       bgImg={`url(${img})`}
       bgColor={'orange.50'}
       bgPos={'center'}
