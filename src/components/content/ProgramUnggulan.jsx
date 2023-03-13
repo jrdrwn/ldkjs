@@ -1,4 +1,5 @@
-import { Center, Container, Flex, Heading, Text, VStack } from '@chakra-ui/react'
+import { Box, Center, Container, Flex, Heading, Text, VStack } from '@chakra-ui/react'
+import ProgramUnggulanWave from '../waves/ProgramUnggulanWave'
 
 function ProgramUnggulanCard({ title, desc, img }) {
   return (
@@ -86,21 +87,31 @@ export default function ProgramUnggulan() {
   ]
 
   return (
-    <Container maxW={'container.lg'} py={4}>
-      <VStack w={'full'}>
-        <Heading color={'orange.500'} fontSize={{ base: '2xl', md: '4xl' }}>
-          Program Unggulan
-        </Heading>
-        <Text color={'gray.700'} align={'center'}>
-          Serangkaian kegiatan dan acara yang dirancang dan dijalankan oleh LDK JS yang bertujuan untuk memberikan kontribusi terbaik dan berkualitas dalam rangkaian aktivitas dakwah dan pengabdian
-          kepada masyarakat kampus dan sekitarnya.
-        </Text>
-        <Flex align={'unset'} justify={'center'} pt={6} gap={4} wrap={'wrap'}>
-          {programUnggulanData.map((props) => (
-            <ProgramUnggulanCard {...props} />
-          ))}
-        </Flex>
-      </VStack>
-    </Container>
+    <>
+      <Box color={'orange.50'}>
+        <ProgramUnggulanWave />
+      </Box>
+      <Box bgColor={'orange.50'}>
+        <Container maxW={'container.lg'} py={4}>
+          <VStack w={'full'}>
+            <Heading color={'orange.500'} fontSize={{ base: '2xl', md: '4xl' }}>
+              Program Unggulan
+            </Heading>
+            <Text color={'gray.700'} align={'center'}>
+              Serangkaian kegiatan dan acara yang dirancang dan dijalankan oleh LDK JS yang bertujuan untuk memberikan kontribusi terbaik dan berkualitas dalam rangkaian aktivitas dakwah dan
+              pengabdian kepada masyarakat kampus dan sekitarnya.
+            </Text>
+            <Flex align={'unset'} justify={'center'} pt={6} gap={4} wrap={'wrap'}>
+              {programUnggulanData.map((props, i) => (
+                <ProgramUnggulanCard {...props} key={i} />
+              ))}
+            </Flex>
+          </VStack>
+        </Container>
+      </Box>
+      <Box color={'orange.50'}>
+        <ProgramUnggulanWave flip={true} />
+      </Box>
+    </>
   )
 }
