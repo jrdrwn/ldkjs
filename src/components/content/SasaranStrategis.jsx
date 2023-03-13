@@ -1,4 +1,5 @@
-import { Card, CardBody, CardHeader, Container, Flex, Heading, Text } from '@chakra-ui/react'
+import { Box, Card, CardBody, CardHeader, Container, Flex, Heading, Text } from '@chakra-ui/react'
+import SasaranStrategisBlob from '../blobs/SasaranStrategisBlob'
 
 function CardSasaranStrategis({ title, content, imgUrl }) {
   return (
@@ -34,7 +35,10 @@ function CardSasaranStrategis({ title, content, imgUrl }) {
 
 export default function SasaranStrategis() {
   return (
-    <Container maxW={'container.xl'} py={4}>
+    <Container maxW={'container.xl'} py={4} pos={'relative'}>
+      <Box pos={'absolute'} color={'orange.200'} w={'xl'} maxW={'full'} bottom={0} left={0} zIndex={-1}>
+        <SasaranStrategisBlob />
+      </Box>
       <Text color={'orange.500'} letterSpacing={'widest'} align={'center'}>
         SASARAN STRATEGIS
       </Text>
@@ -83,6 +87,9 @@ export default function SasaranStrategis() {
           content={'Melaksanakan kajian bersama dosen, alumni, dan sebagainya.'}
         />
       </Flex>
+      <Box pos={'absolute'} color={'orange.100'} w={'xl'} maxW={'full'} top={0} right={0} zIndex={-1}>
+        <SasaranStrategisBlob />
+      </Box>
     </Container>
   )
 }
