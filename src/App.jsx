@@ -1,6 +1,7 @@
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import '@fontsource/ubuntu'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Root from './components/common/Root'
 import Beranda from './pages/Beranda'
 
 const theme = extendTheme({
@@ -13,7 +14,13 @@ const theme = extendTheme({
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Beranda />,
+    element: <Root />,
+    children: [
+      {
+        index: true,
+        element: <Beranda />,
+      },
+    ],
   },
 ])
 
