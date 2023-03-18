@@ -1,4 +1,4 @@
-import { Box, Center, Divider, Flex, Heading, HStack, Icon, Image, Text } from '@chakra-ui/react'
+import { Box, Center, Divider, Flex, Heading, HStack, Icon, Image, Text, VStack } from '@chakra-ui/react'
 import { FaFacebookSquare, FaInstagramSquare, FaYoutubeSquare } from 'react-icons/fa'
 import { MdKeyboardArrowRight, MdLocationPin, MdMail, MdPhone } from 'react-icons/md'
 import footerLogo from '../../assets/footer-logo.png'
@@ -8,8 +8,13 @@ export default function Footer() {
     <>
       <Divider />
       <Flex p={4} wrap={'wrap'} justify={'space-between'} gap={4} bgColor={'gray.50'} color={'gray.700'}>
-        <Box w={'2xs'}>
-          <Image src={footerLogo} objectFit={'cover'} w={'40'} />
+        <Box w={{ base: 'full', md: 'xs' }}>
+          <VStack align={'center'}>
+            <Image src={footerLogo} objectFit={'cover'} w={'28'} />
+            <Text align={'center'} color={'gray.600'}>
+              Unit Kegiatan Mahasiswa yang bergerak dalam bidang Dakwah Islam di Kampus Universitas Palangka Raya
+            </Text>
+          </VStack>
         </Box>
         <Box w={'2xs'}>
           <Heading fontSize={{ base: 'xl', md: '2xl' }} letterSpacing={'wide'} textDecoration={'underline'}>
