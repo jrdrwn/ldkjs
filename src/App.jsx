@@ -3,6 +3,7 @@ import '@fontsource/ubuntu'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Root from './components/common/Root'
 import Beranda from './pages/Beranda'
+import Profil from './pages/Profil'
 
 const theme = extendTheme({
   fonts: {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Beranda />,
+      },
+      {
+        path: 'profil',
+        element: <Profil />,
       },
     ],
   },
