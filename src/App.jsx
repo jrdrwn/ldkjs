@@ -3,6 +3,7 @@ import '@fontsource/ubuntu'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Root from './components/common/Root'
 import Beranda from './pages/Beranda'
+import Galeri from './pages/Galeri'
 import Profil from './pages/Profil'
 
 const theme = extendTheme({
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: 'profil',
         element: <Profil />,
+      },
+      {
+        path: 'galeri',
+        element: <Galeri />,
       },
     ],
   },
