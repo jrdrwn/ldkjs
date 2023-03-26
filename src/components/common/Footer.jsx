@@ -1,8 +1,8 @@
-import { Box, Center, Divider, Flex, Heading, HStack, Icon, Image, Text, VStack } from '@chakra-ui/react'
+import { Box, Center, Divider, Flex, Heading, HStack, Icon, Image, Link, Text, VStack } from '@chakra-ui/react'
 import { FaFacebookSquare, FaInstagramSquare, FaYoutubeSquare } from 'react-icons/fa'
 import { MdKeyboardArrowRight, MdLocationPin, MdMail, MdPhone } from 'react-icons/md'
+import { Link as RouterRouterLink } from 'react-router-dom'
 import footerLogo from '../../assets/footer-logo.png'
-
 export default function Footer() {
   return (
     <>
@@ -24,31 +24,25 @@ export default function Footer() {
             <Icon fontSize={24} color="orange.500">
               <MdKeyboardArrowRight />
             </Icon>
-            <Text color={'gray.600'}>Sejarah</Text>
+            <Link as={RouterRouterLink} to={'/profil'}>
+              <Text color={'gray.600'}>Sejarah</Text>
+            </Link>
           </HStack>
           <HStack align={'start'} mt={2}>
             <Icon fontSize={24} color="orange.500">
               <MdKeyboardArrowRight />
             </Icon>
-            <Text color={'gray.600'}>Struktur Organisasi</Text>
+            <Link as={RouterRouterLink} to={'/profil'}>
+              <Text color={'gray.600'}>Struktur Organisasi</Text>
+            </Link>
           </HStack>
           <HStack align={'start'} mt={2}>
             <Icon fontSize={24} color="orange.500">
               <MdKeyboardArrowRight />
             </Icon>
-            <Text color={'gray.600'}>Profil</Text>
-          </HStack>
-          <HStack align={'start'} mt={2}>
-            <Icon fontSize={24} color="orange.500">
-              <MdKeyboardArrowRight />
-            </Icon>
-            <Text color={'gray.600'}>Visi dan Misi</Text>
-          </HStack>
-          <HStack align={'start'} mt={2}>
-            <Icon fontSize={24} color="orange.500">
-              <MdKeyboardArrowRight />
-            </Icon>
-            <Text color={'gray.600'}>Tugas dan Fungsi</Text>
+            <Link as={RouterRouterLink} to={'/#visimisi'}>
+              <Text color={'gray.600'}>Visi dan Misi</Text>
+            </Link>
           </HStack>
         </Box>
         <Box w={'2xs'}>

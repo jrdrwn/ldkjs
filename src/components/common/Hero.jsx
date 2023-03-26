@@ -1,5 +1,6 @@
 import { Badge, Box, Button, Center, Container, Heading, HStack, Text } from '@chakra-ui/react'
 import { IoMdArrowRoundForward } from 'react-icons/io'
+import { Link } from 'react-router-dom'
 import HeroBlob from '../blobs/HeroBlob'
 
 export default function Hero() {
@@ -27,7 +28,7 @@ export default function Hero() {
         </Text>
         <Center>
           <Button colorScheme={'orange'} shadow={'lg'} rightIcon={<IoMdArrowRoundForward />} rounded={'full'}>
-            Lebih lanjut
+            <Link to={'/profil'}>Lebih lanjut</Link>
           </Button>
         </Center>
       </Container>

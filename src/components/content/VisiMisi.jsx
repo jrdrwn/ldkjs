@@ -1,5 +1,6 @@
 import { AspectRatio, Box, Button, Card, CardBody, Container, Flex, Heading, HStack, Image, Text } from '@chakra-ui/react'
 import { useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { useDraggable } from 'react-use-draggable-scroll'
 import visiImg from '../../assets/visi-img.jpg'
 import MisiBlob from '../blobs/MisiBlob'
@@ -26,9 +27,11 @@ function Visi() {
           </Box>
           <Flex gap={2}>
             <Button rounded={'full'} colorScheme={'orange'}>
-              Sejarah
+              <Link to={'/profil'}>Sejarah</Link>
             </Button>
-            <Button rounded={'full'}>Tugas & Fungsi</Button>
+            <Button rounded={'full'}>
+              <Link to={'/profil'}>Tugas & Fungsi</Link>
+            </Button>
           </Flex>
         </Flex>
       </Flex>
