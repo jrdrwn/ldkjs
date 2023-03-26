@@ -79,7 +79,7 @@ export default function Galeri() {
           <Box bgColor={'orange.50'}>
             <Container maxW={'container.xl'}>
               <VStack rounded={'md'} justify={'center'}>
-                <Heading color={'orange.500'} fontSize={{ base: '2xl', md: '4xl' }}>
+                <Heading textAlign={'center'} color={'orange.500'} fontSize={{ base: '2xl', md: '4xl' }}>
                   {gambar.name}
                 </Heading>
                 <Text maxW={'container.md'} color={'gray.700'} fontSize={{ base: 'lg', md: 'xl' }} align={'center'}>
