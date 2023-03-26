@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Root from './components/common/Root'
 import Beranda from './pages/Beranda'
 import Galeri from './pages/Galeri'
+import Kontak from './pages/Kontak'
 import Profil from './pages/Profil'
 
 const theme = extendTheme({
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: 'galeri',
         element: <Galeri />,
+      },
+      {
+        path: 'kontak',
+        element: <Kontak />,
       },
     ],
   },
