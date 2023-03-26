@@ -38,7 +38,7 @@ export default function NavigationBar() {
           {pages.map((page, i) => (
             <NavLink to={page.path} key={i}>
               {({ isActive }) => (
-                <Button variant={'ghost'} colorScheme={isActive && 'orange'} rounded={'full'} leftIcon={page.icon}>
+                <Button variant={'ghost'} colorScheme={isActive ? 'orange' : undefined} rounded={'full'} leftIcon={page.icon}>
                   {page.name}
                 </Button>
               )}
@@ -52,7 +52,7 @@ export default function NavigationBar() {
           {pages.map((page, i) => (
             <NavLink to={page.path} key={i}>
               {({ isActive }) => (
-                <Button variant={'ghost'} colorScheme={isActive && 'orange'} rounded={'full'} leftIcon={page.icon}>
+                <Button variant={'ghost'} colorScheme={isActive ? 'orange' : undefined} rounded={'full'} leftIcon={page.icon}>
                   {page.name}
                 </Button>
               )}
