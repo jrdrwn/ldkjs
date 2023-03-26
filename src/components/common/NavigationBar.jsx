@@ -48,7 +48,20 @@ export default function NavigationBar() {
       </Show>
       <Show below="md">
         <IconButton rounded={'full'} icon={flag ? <MdClose size={24} /> : <MdMenu size={24} />} colorScheme={'orange'} onClick={setFlag.toggle} />
-        <VStack hidden={!flag} pos={'absolute'} bottom={'-52'} right={'8'} p={2} bgColor={'Background'} border={'1px'} borderColor={'orange'} rounded={'md'} align={'start'} shadow={'md'}>
+        <VStack
+          transition={'all'}
+          transitionDuration={'0.3s'}
+          transform={'auto'}
+          pos={'absolute'}
+          bottom={-52}
+          right={flag ? 0 : -40}
+          p={2}
+          bgColor={'Background'}
+          border={'1px'}
+          borderColor={'orange'}
+          rounded={'md'}
+          align={'start'}
+          shadow={'md'}>
           {pages.map((page, i) => (
             <NavLink to={page.path} key={i}>
               {({ isActive }) => (
