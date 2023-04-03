@@ -1,5 +1,6 @@
 import { Box, Card, CardBody, CardHeader, Container, Flex, Heading, Text } from '@chakra-ui/react'
 import SasaranStrategisBlob from '../blobs/SasaranStrategisBlob'
+import { motion } from 'framer-motion'
 
 function CardSasaranStrategis({ title, content, imgUrl }) {
   return (
@@ -18,7 +19,8 @@ function CardSasaranStrategis({ title, content, imgUrl }) {
       bgSize={'cover'}
       transition={'all'}
       transitionDuration={'0.3s'}
-      _hover={{ transform: 'scale(1.02)' }}>
+      _hover={{ transform: 'scale(1.02)' }}
+      >
       <CardHeader bgColor={'gray.50'} rounded={'full'} w={'fit-content'} px={4} py={2} m={2} shadow={'md'} border={'2px'} borderColor={'orange.500'}>
         <Heading fontSize={'lg'} color={'orange.500'} letterSpacing={'wide'} textTransform={'capitalize'}>
           {title}
@@ -35,7 +37,21 @@ function CardSasaranStrategis({ title, content, imgUrl }) {
 
 export default function SasaranStrategis() {
   return (
-    <Container maxW={'container.xl'} py={4} pos={'relative'}>
+    <Container
+      maxW={'container.xl'}
+      py={4}
+      pos={'relative'}
+      as={motion.div}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          type: 'spring',
+          bounce: 0.1,
+          duration: 1,
+        },
+      }}>
       <Box pos={'absolute'} color={'orange.200'} w={'xl'} maxW={'full'} bottom={0} left={0} zIndex={-1}>
         <SasaranStrategisBlob />
       </Box>

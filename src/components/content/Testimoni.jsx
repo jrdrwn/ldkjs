@@ -1,8 +1,21 @@
 import { Avatar, Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 
 export default function Testimoni() {
   return (
-    <Box px={2}>
+    <Box
+      px={2}
+      as={motion.div}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          type: 'spring',
+          bounce: 0.1,
+          duration: 1,
+        },
+      }}>
       <Container maxW={'container.xl'} p={{ base: 4, md: 10 }} bgColor={'orange.50'} shadow={'md'} my={10} rounded={'3xl'} border={'1px'} borderColor={'orange.500'}>
         <VStack>
           <Heading fontSize={{ base: 'lg', md: '2xl' }} align={'center'} fontWeight={'semibold'} lineHeight={'tall'} mb={2} color={'gray.700'}>

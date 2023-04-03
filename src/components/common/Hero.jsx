@@ -1,4 +1,5 @@
 import { Badge, Box, Button, Center, Container, Heading, HStack, Text } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 import { IoMdArrowRoundForward } from 'react-icons/io'
 import { Link } from 'react-router-dom'
 import HeroBlob from '../blobs/HeroBlob'
@@ -9,7 +10,22 @@ export default function Hero() {
       <Box pos={'absolute'} maxW={'xl'} w={'full'} top={0} zIndex={-1} color={'orange.50'}>
         <HeroBlob />
       </Box>
-      <Container p={4} py={'28'} maxW={'container.md'} pos="relative">
+      <Container
+        p={4}
+        py={'28'}
+        maxW={'container.md'}
+        pos="relative"
+        as={motion.div}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            type: 'spring',
+            bounce: 0.1,
+            duration: 1,
+          },
+        }}>
         <Center>
           <HStack shadow={'md'} bg={'Background'} border={'1px'} borderColor={'orange'} maxW={'fit-content'} borderRadius={'full'} px={4} mb={4}>
             <Text fontWeight={'bold'} textTransform={'capitalize'} letterSpacing={'wider'} bgGradient="linear(to-r, #F6AD55, #DD6B20)" bgClip="text">

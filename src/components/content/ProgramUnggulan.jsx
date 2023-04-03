@@ -1,4 +1,5 @@
 import { Box, Center, Container, Flex, Heading, Text, VStack } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 import ProgramUnggulanWave from '../waves/ProgramUnggulanWave'
 
 function ProgramUnggulanCard({ title, desc, img }) {
@@ -17,7 +18,18 @@ function ProgramUnggulanCard({ title, desc, img }) {
       justify={'center'}
       align={'center'}
       overflow={'hidden'}
-      role="group">
+      role="group"
+      as={motion.div}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          type: 'spring',
+          bounce: 0.1,
+          duration: 1,
+        },
+      }}>
       <Center
         cursor={'pointer'}
         rounded={'md'}

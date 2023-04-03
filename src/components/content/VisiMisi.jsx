@@ -1,4 +1,5 @@
 import { AspectRatio, Box, Button, Card, CardBody, Container, Flex, Heading, HStack, Image, Text } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useDraggable } from 'react-use-draggable-scroll'
@@ -8,7 +9,19 @@ import VisiBlob from '../blobs/VisiBlob'
 
 function Visi() {
   return (
-    <Box mb={'10'}>
+    <Box
+      mb={'10'}
+      as={motion.div}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          type: 'spring',
+          bounce: 0.1,
+          duration: 1,
+        },
+      }}>
       <Box pos={'absolute'} color={'orange.200'} w={{ base: 'sm', md: 'lg' }} top={-20} left={{ base: -20, md: -28 }} zIndex={-4}>
         <VisiBlob />
       </Box>
@@ -54,7 +67,18 @@ function Misi() {
   const { events } = useDraggable(ref)
 
   return (
-    <>
+    <Box
+      as={motion.div}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          type: 'spring',
+          bounce: 0.1,
+          duration: 1,
+        },
+      }}>
       <Heading color={'gray.700'} fontSize={{ base: '2xl', md: '4xl' }} letterSpacing={'wide'} mb={4}>
         Misi yang terdapat di LDK JS?
       </Heading>
@@ -69,7 +93,7 @@ function Misi() {
       <Box pos={'absolute'} color={'orange.200'} w={'xl'} bottom={-40} right={0} zIndex={-4}>
         <MisiBlob />
       </Box>
-    </>
+    </Box>
   )
 }
 

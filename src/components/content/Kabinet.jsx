@@ -1,4 +1,5 @@
 import { Box, Card, CardBody, CardHeader, Center, Container, Flex, Heading, HStack, Text, VStack } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 import { FaBraille } from 'react-icons/fa'
 import { MdOutlineEnergySavingsLeaf } from 'react-icons/md'
 import { RiTeamLine } from 'react-icons/ri'
@@ -7,7 +8,22 @@ import KabinetBlob from '../blobs/KabinetBlob'
 
 function KabinetCard({ title, desc, icon }) {
   return (
-    <Card pos={'relative'} maxW={'xs'} w={'2xs'} variant={'outline'}>
+    <Card
+      pos={'relative'}
+      maxW={'xs'}
+      w={'2xs'}
+      variant={'outline'}
+      as={motion.div}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          type: 'spring',
+          bounce: 0.1,
+          duration: 1,
+        },
+      }}>
       <Center>
         <Box pos={'absolute'} color={'orange.50'} w={'28'} top={0}>
           <KabinetBlob />
@@ -30,7 +46,20 @@ function KabinetCard({ title, desc, icon }) {
 
 function Kabinet() {
   return (
-    <Container maxW={'container.xl'} py={4}>
+    <Container
+      maxW={'container.xl'}
+      py={4}
+      as={motion.div}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          type: 'spring',
+          bounce: 0.1,
+          duration: 1,
+        },
+      }}>
       <VStack w={'full'}>
         <Text color={'orange.500'} letterSpacing={'widest'} align={'center'}>
           KABINET

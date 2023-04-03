@@ -1,6 +1,7 @@
 import { AspectRatio, Box, Container, Flex, Heading, HStack, Icon, Text, VStack } from '@chakra-ui/react'
 import { MdLocationPin, MdMail, MdPhone } from 'react-icons/md'
 import GaleriWave from '../components/waves/GaleriWave'
+import { motion } from 'framer-motion'
 
 export default function Kontak() {
   return (
@@ -8,7 +9,19 @@ export default function Kontak() {
       <Box color={'orange.50'}>
         <GaleriWave flip={true} />
       </Box>
-      <Container maxW={'container.lg'}>
+      <Container
+        maxW={'container.lg'}
+        as={motion.div}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            type: 'spring',
+            bounce: 0.1,
+            duration: 1,
+          },
+        }}>
         <VStack>
           <Heading textAlign={'center'} color={'orange.500'} fontSize={{ base: '2xl', md: '4xl' }}>
             Hubungi Kami

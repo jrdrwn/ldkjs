@@ -1,9 +1,30 @@
 import { Box, Card, CardBody, Container, Flex, Heading, Text, VStack } from '@chakra-ui/react'
 import ProfilKaderWave from '../waves/ProfilKaderWave'
+import { motion } from 'framer-motion'
 
 function ProfilKaderCard({ profile, desc }) {
   return (
-    <Card size={'sm'} maxW={'sm'} variant={'outline'} borderColor={'orange.300'} cursor={'pointer'} transition={'all'} transitionDuration={'0.3s'} transform="auto" _hover={{ translateY: -1 }}>
+    <Card
+      size={'sm'}
+      maxW={'sm'}
+      variant={'outline'}
+      borderColor={'orange.300'}
+      cursor={'pointer'}
+      transition={'all'}
+      transitionDuration={'0.3s'}
+      transform="auto"
+      _hover={{ translateY: -1 }}
+      as={motion.div}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          type: 'spring',
+          bounce: 0.1,
+          duration: 1,
+        },
+      }}>
       <CardBody>
         <VStack align={'start'}>
           <Heading color={'orange.500'} fontSize={{ base: 'xl', md: '2xl' }}>

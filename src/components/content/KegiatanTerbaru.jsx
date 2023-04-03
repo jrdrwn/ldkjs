@@ -3,6 +3,7 @@ import { MdArrowLeft, MdArrowRight } from 'react-icons/md'
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 import KegiatanTerbaruBlob from '../blobs/KegiatanTerbaruBlob'
+import { motion } from 'framer-motion'
 
 function KegiatanCard({ title, desc, img }) {
   return (
@@ -62,7 +63,19 @@ export default function KegiatanTerbaru() {
     },
   ]
   return (
-    <Box pos={'relative'}>
+    <Box
+      pos={'relative'}
+      as={motion.div}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          type: 'spring',
+          bounce: 0.1,
+          duration: 1,
+        },
+      }}>
       <Box color={'orange.50'} pos={'absolute'} maxW={'xl'} w="full" top={{ base: -24, md: -40 }} left={-20} zIndex={-1}>
         <KegiatanTerbaruBlob />
       </Box>

@@ -1,5 +1,6 @@
 import { Box, Container, Flex, Heading, Image, Skeleton, Text, VStack } from '@chakra-ui/react'
 import GaleriWave from '../components/waves/GaleriWave'
+import { motion } from 'framer-motion'
 
 export default function Galeri() {
   const dataGambar = [
@@ -40,7 +41,14 @@ export default function Galeri() {
     {
       name: 'Rapat Kerja',
       desc: 'Rapat Kerja diadakan pada Sabtu, 25 Februari 2023 di Ruang F.E. 7 dengan tema "Regenerasi Kepemimpinan dalam Membentuk Kepengurusan yang Berintegritas". Kegiatan ini dimulai pukul 07.00 WIB hingga selesai dan WAJIB dihadiri oleh seluruh pengurus LDKJS UPR Tahun 2023.',
-      photos: ['/gambar/rapat-kerja-2023/1.webp', '/gambar/rapat-kerja-2023/2.webp', '/gambar/rapat-kerja-2023/3.webp', '/gambar/rapat-kerja-2023/4.webp', '/gambar/rapat-kerja-2023/5.webp', '/gambar/rapat-kerja-2023/6.webp'],
+      photos: [
+        '/gambar/rapat-kerja-2023/1.webp',
+        '/gambar/rapat-kerja-2023/2.webp',
+        '/gambar/rapat-kerja-2023/3.webp',
+        '/gambar/rapat-kerja-2023/4.webp',
+        '/gambar/rapat-kerja-2023/5.webp',
+        '/gambar/rapat-kerja-2023/6.webp',
+      ],
     },
     {
       name: 'MILAD LDK JS UPR Ke-31',
@@ -64,7 +72,21 @@ export default function Galeri() {
                 <Text maxW={'container.md'} color={'gray.700'} fontSize={{ base: 'lg', md: 'xl' }} align={'center'}>
                   {gambar.desc}
                 </Text>
-                <Flex wrap={'wrap'} justify={'center'} gap={2}>
+                <Flex
+                  wrap={'wrap'}
+                  justify={'center'}
+                  gap={2}
+                  as={motion.div}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      type: 'spring',
+                      bounce: 0.1,
+                      duration: 1,
+                    },
+                  }}>
                   {gambar.photos.map((imgUrl, i) => (
                     <Image
                       src={imgUrl}

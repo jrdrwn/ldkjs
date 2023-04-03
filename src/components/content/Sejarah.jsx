@@ -1,5 +1,6 @@
 import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
 import SejarahWave from '../waves/SejarahWave'
+import { motion } from 'framer-motion'
 
 export default function Sejarah() {
   return (
@@ -7,7 +8,21 @@ export default function Sejarah() {
       <Box color={'orange.50'}>
         <SejarahWave flip={true} />
       </Box>
-      <Container maxW={'container.md'} py={10} zIndex={999}>
+      <Container
+        maxW={'container.md'}
+        py={10}
+        zIndex={999}
+        as={motion.div}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            type: 'spring',
+            bounce: 0.1,
+            duration: 1,
+          },
+        }}>
         <VStack>
           <Heading color={'gray.700'} fontSize={{ base: '2xl', md: '4xl' }}>
             Sejarah Singkat
